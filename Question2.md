@@ -17,10 +17,10 @@ library(janitor)
 head(penguins_raw)
 ```
 ### From the output, there are multiple noticable aspects of this dataset that need to be cleaned before further analysis. These are:
-### - The column names need to be changed so they are machine readable (lower and snake case) - this is done through the function 'clean_column_names'. 
-### - Any empty column or row should be removed - this is done through the function remove_empty_column_names. 
-### - The final three columns are not relevant and should be removed from the dataset - this is done through the functions select()
-### - The species names should be shortened - this is done through the function shorten_species()
+- The column names need to be changed so they are machine readable (lower and snake case) - this is done through the function 'clean_column_names'. 
+- Any empty column or row should be removed - this is done through the function remove_empty_column_names. 
+- The final three columns are not relevant and should be removed from the dataset - this is done through the functions select()
+- The species names should be shortened - this is done through the function shorten_species()
 
 ### All of these cleaning functions are done below through a pipeline, defining a new object 'penguins_clean' which will be the newly cleaned dataset:
 ```
