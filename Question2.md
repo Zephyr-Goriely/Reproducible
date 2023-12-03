@@ -44,7 +44,9 @@ ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm, colour
 
 ## Hypothesis
 
-Based on the appearance of the exploratory graph and the plotted line of best fit, I formulate the hypothesis that flipper length increases with body mass, in other words, body mass explains some of the variation in flipper. This hypothesis supported by the apparent directly proportional relationship. This can be tested by investigating if there is a positive linear relationship between these variables. As such the hypothesis follows: Null hypothesis (H0): R\^2 = 0 - A coefficient of determination = 0 would suggest that body mass explains none of the variation in flipper length. Alternative hypothesis (H1): R\^2 \> 0 - A coefficient of determination \> 0 would suggest that body mass explains a non-zero amont of the variation in flipper length.
+Based on the appearance of the exploratory graph and the plotted line of best fit, I formulate the hypothesis that flipper length increases with body mass, in other words, body mass explains some of the variation in flipper. This hypothesis supported by the apparent directly proportional relationship. This can be tested by investigating if there is a positive linear relationship between these variables. As such the hypothesis follows: 
+Null hypothesis (H0): R\^2 = 0 - A coefficient of determination = 0 would suggest that body mass explains none of the variation in flipper length. 
+Alternative hypothesis (H1): R\^2 \> 0 - A coefficient of determination \> 0 would suggest that body mass explains a non-zero amont of the variation in flipper length.
 
 ## Statistical Methods
 
