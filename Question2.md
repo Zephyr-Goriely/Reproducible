@@ -2,7 +2,6 @@
 ### The first step in data exploration is to install and load all the relevant packages. These packages include ggplot2 (to produce graphs), janitor (to help clean the dataset), dplyr (which allows us to use the pipe function), and palmerpenguins (which provides the dataset). This is done below:
 
 ```{r Data Exploration}
-
 install.packages("ggplot2")
 install.packages("dplyr")
 install.packages("palmerpenguins")
