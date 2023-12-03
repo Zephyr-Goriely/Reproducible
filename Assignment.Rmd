@@ -90,35 +90,3 @@ ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm)) +
 ### Conclusion
 
 ## This leads to the conclusion that body mass explains variation in flipper length and those penguins with larger body mass are more likely to have longer flippers. This conclusion would be expected as greater body masses usually indicate larger birds and given that both of these measures are of morphological features, it makes sense that flipper length will increase as body mass increases.
-
-## QUESTION 3: Open Science
-
-### a) GitHub
-
-*Upload your RProject you created for **Question 2** and any files and subfolders used to GitHub. Do not include any identifiers such as your name. Make sure your GitHub repo is public.*
-
-*GitHub link:*
-
-*You will be marked on your repo organisation and readability.*
-
-### b) Share your repo with a partner, download, and try to run their data pipeline.
-
-*Partner's GitHub link:*
-
-*You **must** provide this so I can verify there is no plagiarism between you and your partner.*
-
-### c) Reflect on your experience running their code. (300-500 words)
-
--   *What elements of your partner's code helped you to understand their data pipeline?*
-
--   *Did it run? Did you need to fix anything?*
-
--   *What suggestions would you make for improving their code to make it more understandable or reproducible, and why?*
-
--   *If you needed to alter your partner's figure using their code, do you think that would be easy or difficult, and why?*
-
-### d) Reflect on your own code based on your experience with your partner's code and their review of yours. (300-500 words)
-
--   *What improvements did they suggest, and do you agree?*
-
--   *What did you learn about writing code for other people?*
