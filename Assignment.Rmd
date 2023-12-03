@@ -1,4 +1,3 @@
-
 ### Introduction
 
 ```{r Data Exploration}
