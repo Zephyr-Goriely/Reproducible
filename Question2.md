@@ -1,6 +1,6 @@
 ``{r Data Exploration}
 
-# The first step in data exploration is to install and load all the relevant packages. These packages include ggplot2 (to produce graphs), janitor (to help clean the dataset), dplyr (which allows us to use the pipe function), and palmerpenguins (which provides the dataset). This is done below:
+### The first step in data exploration is to install and load all the relevant packages. These packages include ggplot2 (to produce graphs), janitor (to help clean the dataset), dplyr (which allows us to use the pipe function), and palmerpenguins (which provides the dataset). This is done below:
 
 install.packages("ggplot2")
 install.packages("dplyr")
@@ -12,17 +12,17 @@ library(dplyr)
 library(palmerpenguins)
 library(janitor)
 
-# The next step is to investigate the raw data set that is already termed penguins_raw from the palmerpenguins package. By using the head() function, the dataset can be observed such that the aspects that require cleaning can be identified. 
+### The next step is to investigate the raw data set that is already termed penguins_raw from the palmerpenguins package. By using the head() function, the dataset can be observed such that the aspects that require cleaning can be identified. 
 
 head(penguins_raw)
 
-# From the output, there are multiple noticable aspects of this dataset that need to be cleaned before further analysis. These are:
-# The column names need to be changed so they are machine readable (lower and snake case) - this is done through the function 'clean_column_names'. 
-# Any empty column or row should be removed - this is done through the function remove_empty_column_names. 
-# The final three columns are not relevant and should be removed from the dataset - this is done through the functions select()
-# The species names should be shortened - this is done through the function shorten_species()
+### From the output, there are multiple noticable aspects of this dataset that need to be cleaned before further analysis. These are:
+### The column names need to be changed so they are machine readable (lower and snake case) - this is done through the function 'clean_column_names'. 
+### Any empty column or row should be removed - this is done through the function remove_empty_column_names. 
+### The final three columns are not relevant and should be removed from the dataset - this is done through the functions select()
+### The species names should be shortened - this is done through the function shorten_species()
 
-# All of these cleaning functions are done below through a pipeline, defining a new object 'penguins_clean' which will be the newly cleaned dataset:
+### All of these cleaning functions are done below through a pipeline, defining a new object 'penguins_clean' which will be the newly cleaned dataset:
 
 penguins_clean <- penguins_raw %>%
     clean_column_names() %>%
@@ -33,7 +33,7 @@ penguins_clean <- penguins_raw %>%
  
 head(penguins_clean)
 
-# Now that the dataset has been cleaned, a graph can be plotted to observe the data. Using ggplot, a scatterplot can be made to show the relationship between flipper length and body mass. The code for this is below:
+### Now that the dataset has been cleaned, a graph can be plotted to observe the data. Using ggplot, a scatterplot can be made to show the relationship between flipper length and body mass. The code for this is below:
 
 ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm, colour = species)) +
   geom_point() +
@@ -61,7 +61,7 @@ correlation <- cor.test(x, y)
 print(correlation)
 ```
 
-### Results & Discussion
+## Results & Discussion
 
 ```{r Plotting Results}
 
@@ -84,6 +84,6 @@ ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm)) +
 
 ```
 
-### Conclusion
+## Conclusion
 
-## This leads to the conclusion that body mass explains variation in flipper length and those penguins with larger body mass are more likely to have longer flippers. This conclusion would be expected as greater body masses usually indicate larger birds and given that both of these measures are of morphological features, it makes sense that flipper length will increase as body mass increases.
+### This leads to the conclusion that body mass explains variation in flipper length and those penguins with larger body mass are more likely to have longer flippers. This conclusion would be expected as greater body masses usually indicate larger birds and given that both of these measures are of morphological features, it makes sense that flipper length will increase as body mass increases.
