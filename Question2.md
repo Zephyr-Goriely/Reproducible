@@ -2,7 +2,7 @@
 
 Presented with the palmerpenguins dataset, I begin a data analysis to investigate the relationship between body mass and flipper length, considering the influence of species. The first step in data exploration is to install and load all the relevant packages. These packages include ggplot2 (to produce graphs), janitor (to help clean the dataset), dplyr (which allows us to use the pipe function), and palmerpenguins (which provides the dataset). This is done below:
 
-```{r Data Exploration}
+```{r Data Exploration, warning=FALSE}
 
 install.packages("ggplot2")
 install.packages("dplyr")
@@ -16,7 +16,7 @@ library(janitor)
 ```
 
 The next step is to investigate the raw data set that is already termed penguins_raw from the palmerpenguins package. By using the head() function, the dataset can be observed such that the aspects that require cleaning can be identified. 
-```{r}
+```{r, warning=FALSE}
 head(penguins_raw)
 ```
 
@@ -29,7 +29,7 @@ From the output, there are multiple noticable aspects of this dataset that need 
 
 All of these cleaning functions are done below through a pipeline, defining a new object 'penguins_clean' which will be the newly cleaned dataset:
 
-```{r}
+```{r, warning=FALSE}
 
 penguins_clean <- penguins_raw %>%
     clean_column_names() %>%
@@ -43,7 +43,7 @@ head(penguins_clean)
 ```
 
 Now that the dataset has been cleaned, a graph can be plotted to observe the data. Using ggplot, a scatterplot can be made to show the relationship between flipper length and body mass. The code for this is below:
-```{r - Plottoing the exploratory figure}
+```{r - Plottoing the exploratory figure, warning=FALSE}
 ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm, colour = species)) +
   geom_point() +
   labs(title = "Body Mass plotted against Flipper length in all penguins", x = "Body Mass (g)", y = "Flipper Length (mm)") +
@@ -65,7 +65,7 @@ Alternative hypothesis (H1): There is a non-zero effect of the interaction betwe
 
 The appropriate statistical test to investigate this relationship would be finding the coefficient of determination (R^2) in a linear model between these two variables. An F-test of overall significance can then be used to determine whether the found relationship is truly significant. All of these tests are conducted through the linear model function (lm()):
 
-```{r Statistics - Linear Model}
+```{r Statistics - Linear Model, warning=FALSE}
 linear_model <- lm(data = penguins_clean, flipper_length_mm ~ body_mass_g)
 summary(linear_model)
 ```
@@ -76,7 +76,7 @@ Next, in order to test the significance of the influence of species for this rel
 
 This is done below:
 
-```{r - ANCOVA}
+```{r - ANCOVA, warning=FALSE}
 
 # Creating linear models for each individual penguin species can be achieved by subseting the data further into species specific datasets from which the models can be made. This is done below:
 
@@ -116,7 +116,7 @@ The results of the linear regression produce an Adjusted R-squared value of 0.75
 
 For full visibility, the initial graph is plotted again, this time only focussing on the tested relationship. The results of the stats test are also projected. The code for the graph is shown below:
 
-```{r Plotting linear model results}
+```{r Plotting linear model results, warning=FALSE}
 ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point() +
   labs(title = "Body Mass plotted against Flipper length in all penguins", x = "Body Mass (g)", y = "Flipper Length (mm)") +
@@ -132,7 +132,7 @@ The second hypothesis is tested using an ANCOVA statistical test where the inter
 
 Likewise, to give a visual demonstration of this result, the graph is plotted once more, this time showing the relationships for each individual species.
 
-```{r Plotting ANCOVA results} 
+```{r Plotting ANCOVA results, warning=FALSE} 
 ggplot(data = penguins_clean, aes(x = body_mass_g, y = flipper_length_mm, colour = species)) +
   geom_point() +
   labs(title = "Body Mass plotted against Flipper length by species", x = "Body Mass (g)", y = "Flipper Length (mm)") +
