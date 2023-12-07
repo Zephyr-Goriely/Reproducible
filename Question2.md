@@ -16,7 +16,7 @@ library(janitor)
 ```
 
 The next step is to investigate the raw data set that is already termed penguins_raw from the palmerpenguins package. By using the head() function, the dataset can be observed such that the aspects that require cleaning can be identified. 
-```{r, warning=FALSE}
+```{r warning=FALSE}
 head(penguins_raw)
 ```
 
@@ -29,7 +29,7 @@ From the output, there are multiple noticable aspects of this dataset that need 
 
 All of these cleaning functions are done below through a pipeline, defining a new object 'penguins_clean' which will be the newly cleaned dataset:
 
-```{r, warning=FALSE}
+```{r warning=FALSE}
 
 penguins_clean <- penguins_raw %>%
     clean_column_names() %>%
